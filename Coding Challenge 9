@@ -1,1 +1,8 @@
+function buildJsBasicsRunLabel(suiteName, environment, buildNumber) {
+  return `${suiteName.trim()} | ${environment.trim().toLowerCase()} | build-${buildNumber}`;
+}
+buildJsBasicsRunLabel(" Smoke Suite ", " STAGING ", 42);
+// "Smoke Suite | staging | build-42"
 
+buildJsBasicsRunLabel("Regression", "PROD", 7);
+// "Regression | prod | build-7"
