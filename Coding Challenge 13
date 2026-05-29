@@ -1,1 +1,9 @@
-
+function checkJsBasicsReadinessGate(flag1, flag2, flag3) {
+  return (
+    flag1 === true &&
+    flag2 === true &&
+    flag3 === true
+  )
+    ? "READY"
+    : "BLOCKED";
+}
