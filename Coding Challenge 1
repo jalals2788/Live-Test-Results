@@ -1,0 +1,9 @@
+function normalizeJsBasicsLabel(text) {
+  const normalized = text
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return normalized ? `js-basic-${normalized}` : "js-basic";
+}
