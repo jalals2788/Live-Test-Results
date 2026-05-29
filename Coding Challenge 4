@@ -1,1 +1,11 @@
+function getJsBasicsKeywordMeaning(term) {
+  const keywords = {
+    node: "runtime",
+    v8: "engine",
+    npm: "package-manager"
+  };
 
+  const normalized = term.trim().toLowerCase();
+
+  return keywords[normalized] || "unknown";
+}
