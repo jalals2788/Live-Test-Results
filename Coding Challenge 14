@@ -1,1 +1,16 @@
 
+function buildJsBasicsChecklist(tasks) {
+  const checklist = [];
+
+  for (const task of tasks) {
+    const trimmed = String(task).trim();
+
+    if (trimmed) {
+      checklist.push(
+        `${checklist.length + 1}. ${trimmed} - TODO`
+      );
+    }
+  }
+
+  return checklist;
+}
