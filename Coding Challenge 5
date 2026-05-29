@@ -1,1 +1,25 @@
+function filterSupportedJsBasicsTopics(topics) {
+  const aliasMap = {
+    node: "node",
+    runtime: "node",
+    v8: "v8",
+    engine: "v8",
+    npm: "npm",
+    "package-manager": "npm"
+  };
 
+  const result = [];
+  const seen = new Set();
+
+  for (const topic of topics) {
+    const normalized = String(topic).trim().toLowerCase();
+    const canonical = aliasMap[normalized];
+
+    if (canonical && !seen.has(canonical)) {
+      seen.add(canonical);
+      result.push(canonical);
+    }
+  }
+
+  return result;
+}
