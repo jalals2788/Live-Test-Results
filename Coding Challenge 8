@@ -1,1 +1,12 @@
+function mergeJsBasicsConfig(defaultConfig, overrideConfig) {
+  const merged = {
+    ...defaultConfig,
+    ...overrideConfig
+  };
 
+  if (!("retries" in merged)) {
+    merged.retries = 0;
+  }
+
+  return merged;
+}
