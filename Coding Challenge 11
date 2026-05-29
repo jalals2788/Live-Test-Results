@@ -1,1 +1,25 @@
+function summarizeJsBasicsMatrix(matrix) {
+  const summary = {
+    total: 0,
+    passed: 0,
+    failed: 0,
+    failedCases: []
+  };
 
+  for (const row of matrix) {
+    for (const result of row) {
+      summary.total++;
+
+      const value = String(result).toLowerCase();
+
+      if (value.includes("pass")) {
+        summary.passed++;
+      } else if (value.includes("fail")) {
+        summary.failed++;
+        summary.failedCases.push(result);
+      }
+    }
+  }
+
+  return summary;
+}
